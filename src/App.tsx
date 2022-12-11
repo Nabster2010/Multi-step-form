@@ -13,11 +13,11 @@ const App = () => {
 
   return (
     <div
-      className="relative min-h-[600px] flex flex-col  md:shadow-lg  
-     md:bg-white md:my-10 md:rounded-xl md:max-w-4xl mx-auto md:p-4  md:grid md:grid-cols-3"
+      className="relative mx-auto flex flex-col md:shadow-lg  
+     md:bg-white md:rounded-xl md:max-w-4xl md:p-4 md:mt-8 md:grid md:grid-cols-3"
     >
       <Nav currStep={currStep} />
-      <div className="flex  flex-1 flex-col h-full justify-between md:col-span-2  md:mx-16 mb-36 md:mb-0 ">
+      <div className="flex md:min-h-[500px] flex-1 flex-col h-full justify-between md:col-span-2 md:mx-16 mb-36 md:mb-0 ">
         <Suspense fallback={<h1>loading...</h1>}>
           {CurrentStep(currStep, confirmed)}
         </Suspense>

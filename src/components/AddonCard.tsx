@@ -20,7 +20,7 @@ const AddOnCard = ({ id, title, desc, price }: AddonCardProps) => {
     <label
       htmlFor={uid}
       className={classNames(
-        "border h-20  rounded-md p-4 flex items-center justify-between cursor-pointer",
+        "border md:h-16 h-20 rounded-md p-4 flex items-center justify-between cursor-pointer",
         selected && "bg-Alabaster border-PurplishBlue"
       )}
     >
