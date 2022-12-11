@@ -20,9 +20,9 @@ export const DataContextProvider = ({
   const [monthly, setMonthly] = useState(true);
   const errorsInitialState = { name: false, email: false, phone: false };
   const [errors, setErrors] = useState<ErrorProps>(errorsInitialState);
-  const [plans] = useState<Plan[]>(PLANS);
+  const [plans, setPlan] = useState<Plan[]>(PLANS);
   const [selectedPlan, setSelectedPlan] = useState(1);
-  const [addons] = useState<Addon[]>(ADDONS);
+  const [addons, setAddon] = useState<Addon[]>(ADDONS);
   const [selectedAddons, setSelectedAddon] = useState<number[]>([]);
 
   const nextStep = (): void => {
