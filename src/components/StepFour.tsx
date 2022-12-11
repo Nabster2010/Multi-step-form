@@ -27,44 +27,49 @@ const StepFour = () => {
           Double-check everything looks OK before confirming.
         </p>
       </div>
-      <div className="p-4 mt-8 bg-Alabaster rounded-md">
-        <div className="flex items-center justify-between border-b pb-3 ">
-          <div className="">
-            <h1 className="text-MarineBlue text-sm font-medium">
-              {currPlan?.title}({monthly ? "Monthly" : "Yearly"})
-            </h1>
-            <button
-              onClick={() => goToStep(2)}
-              className="text-sm text-CoolGray underline"
-            >
-              Change
-            </button>
-          </div>
-          <p className="text-MarineBlue text-sm font-medium">{`$${price(
-            currPlan?.price
-          )}/${monthly ? "mo" : "yr"}`}</p>
-        </div>
-        {currAddons.length > 0 &&
-          currAddons.map((addon) => (
-            <div
-              key={addon?.id}
-              className="flex items-center justify-between mt-4 "
-            >
-              <h1 className="text-CoolGray text-sm ">{addon?.title}</h1>
-              <p className="text-MarineBlue text-sm ">{`${price(
-                addon?.price
+      {currPlan?.price && (
+        <>
+          <div className="p-4 mt-8 bg-Alabaster rounded-md">
+            <div className="flex items-center justify-between border-b pb-3 ">
+              <div className="">
+                <h1 className="text-MarineBlue text-sm font-medium">
+                  {currPlan?.title}({monthly ? "Monthly" : "Yearly"})
+                </h1>
+                <button
+                  onClick={() => goToStep(2)}
+                  className="text-sm text-CoolGray underline"
+                >
+                  Change
+                </button>
+              </div>
+
+              <p className="text-MarineBlue text-sm font-medium">{`$${price(
+                currPlan?.price
               )}/${monthly ? "mo" : "yr"}`}</p>
             </div>
-          ))}
-      </div>
-      <div className="p-4 mt-4 flex justify-between items-center">
-        <h1 className="text-CoolGray text-sm ">
-          Total({`per ${monthly ? "month" : "year"}`})
-        </h1>
-        <p className=" text-PurplishBlue font-bold ">
-          ${`${totalPrice}/${monthly ? "mo" : "yr"}`}
-        </p>
-      </div>
+            {currAddons.length > 0 &&
+              currAddons.map((addon) => (
+                <div
+                  key={addon?.id}
+                  className="flex items-center justify-between mt-4 "
+                >
+                  <h1 className="text-CoolGray text-sm ">{addon?.title}</h1>
+                  <p className="text-MarineBlue text-sm ">{`${price(
+                    addon?.price
+                  )}/${monthly ? "mo" : "yr"}`}</p>
+                </div>
+              ))}
+          </div>
+          <div className="p-4 mt-4 flex justify-between items-center">
+            <h1 className="text-CoolGray text-sm ">
+              Total({`per ${monthly ? "month" : "year"}`})
+            </h1>
+            <p className=" text-PurplishBlue font-bold ">
+              ${`${totalPrice}/${monthly ? "mo" : "yr"}`}
+            </p>
+          </div>
+        </>
+      )}
     </div>
   );
 };
