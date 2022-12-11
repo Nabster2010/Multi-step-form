@@ -17,7 +17,7 @@ const App = () => {
      md:bg-white md:rounded-xl md:max-w-4xl md:p-4 md:mt-8 md:grid md:grid-cols-3"
     >
       <Nav currStep={currStep} />
-      <div className="flex md:min-h-[500px] flex-1 flex-col h-full justify-between md:col-span-2 md:mx-16 mb-36 md:mb-0 ">
+      <div className="flex md:min-h-[520px] flex-1 flex-col h-full justify-between md:col-span-2 md:mx-16 mb-36 md:mb-0 ">
         <Suspense fallback={<h1>loading...</h1>}>
           {CurrentStep(currStep, confirmed)}
         </Suspense>
