@@ -10,8 +10,12 @@ const StepFour = () => {
     return addons.find((addon) => addon.id === id);
   });
 
-  const price = (price: { monthly: number; yearly: number }): number =>
-    monthly ? price?.monthly : price?.yearly;
+  const price = (
+    price: { monthly: number; yearly: number } | undefined
+  ): number => {
+    if (!price) return 0;
+    return monthly ? price?.monthly : price?.yearly;
+  };
 
   const totalPrice: number =
     currAddons.reduce((acc, cur) => acc + price(cur?.price), 0) +
